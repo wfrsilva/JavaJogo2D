@@ -1,2 +1,14 @@
 # JavaJogo2D
 Jogo 2D Java
+Inspirado na playlist https://www.youtube.com/watch?v=WbJH7VRSZeE&list=PLlW3qrNjsvBwUmUk9kio7bNT3GR554FH5
+
+"Nessa serie de videos eu ensino como fazer um Jogo 2D usando o Java, que é uma das maiores plataformas/engine já usadas, você vai aprender tudo que é preciso para fazer o jogo que você quiser, ficando totalmente independente, dependendo apenas da sua criatividade."
+(Canal Mation)
+
+# Complementos / bibliotecas
+
+Testando alguns playgrounds para minimizar o uso de IDEs devido ao peso de uso da memoria.
+https://code.sololearn.com/cVRUy2BwauK8#java
+https://www.codingame.com/playgrounds/17026/java-playground
+https://www.compilejava.net/
+
