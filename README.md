@@ -8,7 +8,10 @@ Inspirado na playlist https://www.youtube.com/watch?v=WbJH7VRSZeE&list=PLlW3qrNj
 # Complementos / bibliotecas
 
 Testando alguns playgrounds para minimizar o uso de IDEs devido ao peso de uso da memoria.
-https://code.sololearn.com/cVRUy2BwauK8#java
-https://www.codingame.com/playgrounds/17026/java-playground
-https://www.compilejava.net/
 
+https://code.sololearn.com/cVRUy2BwauK8#java
+
+https://www.codingame.com/playgrounds/17026/java-playground
+
+https://www.compilejava.net/
+-Nao gostei da identação, dificil identar de forma correta
