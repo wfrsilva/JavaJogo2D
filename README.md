@@ -11,7 +11,13 @@ Testando alguns playgrounds para minimizar o uso de IDEs devido ao peso de uso d
 
 https://code.sololearn.com/cVRUy2BwauK8#java
 
+- Nao consegui rodar Container.java
+
 https://www.codingame.com/playgrounds/17026/java-playground
 
+- Nao consegui rodar Container.java
+
 https://www.compilejava.net/
+
+- rodou Container.java
 -Nao gostei da identação, dificil identar de forma correta
