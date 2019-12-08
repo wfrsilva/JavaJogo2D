@@ -17,6 +17,9 @@ https://opengameart.org/content/space-ship-mech-construction-kit-2
 
 https://www.shutterstock.com/es/search/space+sprites?image_type=illustration
 
+https://craftpix.net/product/spaceship-2d-game-sprites/
+
+
 # Ferramentas
 Editor online de imagens 
 
