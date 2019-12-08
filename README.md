@@ -17,6 +17,12 @@ https://opengameart.org/content/space-ship-mech-construction-kit-2
 
 https://www.shutterstock.com/es/search/space+sprites?image_type=illustration
 
+# Ferramentas
+Editor online de imagens 
+
+https://pixlr.com/x/
+
+
 
 # outros jogos:
 https://github.com/soundgnome/mages
