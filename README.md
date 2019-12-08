@@ -7,8 +7,28 @@ Inspirado na playlist https://www.youtube.com/watch?v=WbJH7VRSZeE&list=PLlW3qrNj
 
 # Complementos / bibliotecas
 As imagens do projeto original são naqueles sites que aparecem variso bot~eos de downloads.
-Sugestões para background:
+Sugestões para imagens:
+
 https://www.graciaviva.cat/pngs/18368/
+
+https://opengameart.org/content/space-ship-construction-kit
+
+https://opengameart.org/content/space-ship-mech-construction-kit-2
+
+https://www.shutterstock.com/es/search/space+sprites?image_type=illustration
+
+https://craftpix.net/product/spaceship-2d-game-sprites/
+
+
+# Ferramentas
+Editor online de imagens 
+
+https://pixlr.com/x/
+
+
+
+# outros jogos:
+https://github.com/soundgnome/mages
 
 Testando alguns playgrounds para minimizar o uso de IDEs devido ao peso de uso da memoria.
 
