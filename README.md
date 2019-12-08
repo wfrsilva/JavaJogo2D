@@ -15,8 +15,10 @@ https://opengameart.org/content/space-ship-construction-kit
 
 https://opengameart.org/content/space-ship-mech-construction-kit-2
 
+https://www.shutterstock.com/es/search/space+sprites?image_type=illustration
 
-outros jogos:
+
+# outros jogos:
 https://github.com/soundgnome/mages
 
 Testando alguns playgrounds para minimizar o uso de IDEs devido ao peso de uso da memoria.
