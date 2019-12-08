@@ -14,7 +14,7 @@ public class Player {
 	
 	public Player() {
 		this.x= 100;
-		this.y = 100;		
+		this.y = 728/2;		
 	}//constructor
 	
 	public void load() {
