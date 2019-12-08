@@ -6,6 +6,9 @@ Inspirado na playlist https://www.youtube.com/watch?v=WbJH7VRSZeE&list=PLlW3qrNj
 (Canal Mation)
 
 # Complementos / bibliotecas
+As imagens do projeto original são naqueles sites que aparecem variso bot~eos de downloads.
+Sugestões para background:
+https://www.graciaviva.cat/pngs/18368/
 
 Testando alguns playgrounds para minimizar o uso de IDEs devido ao peso de uso da memoria.
 
