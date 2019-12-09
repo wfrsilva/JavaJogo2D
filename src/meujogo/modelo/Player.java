@@ -2,6 +2,8 @@ package meujogo.modelo;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -11,10 +13,14 @@ public class Player {
 	private int dx, dy;
 	private Image imagem;
 	private int altura, largura;
+	private List <Tiro> tiros;
 	
 	public Player() {
 		this.x= 100;
-		this.y = 728/2;		
+		this.y = 728/2;	
+		
+		tiros = new ArrayList<Tiro>();
+		
 	}//constructor
 	
 	public void load() {
@@ -29,8 +35,17 @@ public class Player {
 		y += dy;
 	}//update
 	
+	public void tiroSimples() {
+		this.tiros.add(new Tiro(x + (largura/2), y + (altura/2)));
+	}//tirosimples
+	
+	
 	public void keypressed(KeyEvent tecla) {
 		int codigo  = tecla.getKeyCode();
+		
+		if(codigo== KeyEvent.VK_A) {
+			tiroSimples();
+		}//if
 		
 		if(codigo== KeyEvent.VK_UP) {
 			dy = -3;
@@ -75,6 +90,10 @@ public class Player {
 
 	public Image getImagem() {
 		return imagem;
+	}
+
+	public List<Tiro> getTiros() {
+		return tiros;
 	}
 
 	

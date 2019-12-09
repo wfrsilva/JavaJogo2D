@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -42,8 +43,16 @@ public class Fase extends JPanel implements ActionListener{
 		Graphics2D graficos = (Graphics2D) g;
 		graficos.drawImage(fundo, 0, 0, null);
 		graficos.drawImage(nebulosa, 0, 0, null);
-		graficos.drawImage(player.getImagem(), player.getX(), player.getY(), this);
 		
+		
+		List <Tiro> tiros = player.getTiros();
+		for(int i = 0; i < tiros.size();i++) {
+			Tiro m = tiros.get(i);
+			m.load();
+			graficos.drawImage(m.getImagem(), m.getX(), m.getY(), this);
+		}//for
+		
+		graficos.drawImage(player.getImagem(), player.getX(), player.getY(), this);
 		
 		g.dispose();
 	}// paint
@@ -51,6 +60,18 @@ public class Fase extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 			player.update();
+			
+			List <Tiro> tiros = player.getTiros();
+			for(int i = 0; i < tiros.size();i++) {
+				Tiro m = tiros.get(i);
+				if(m.isVisivel()){
+					m.update();
+				}//if
+				else {
+					tiros.remove(i);
+				}//else
+			}//for
+			
 			repaint();
 		
 	}//actionPerformed

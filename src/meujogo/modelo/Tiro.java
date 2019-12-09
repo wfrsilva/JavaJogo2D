@@ -59,6 +59,10 @@ public class Tiro {
 	public int getY() {
 		return y;
 	}
+
+	public Image getImagem() {
+		return imagem;
+	}
 	
 	
 	
