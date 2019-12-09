@@ -3,6 +3,7 @@ package meujogo.modelo;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -20,6 +21,7 @@ public class Fase extends JPanel implements ActionListener{
 	private Player player;
 	private  Timer timer;
 	private List<Inimigo1> inimigo1;
+	private boolean emJogo;
 	
 	public Fase() {
 		setFocusable(true);
@@ -39,6 +41,7 @@ public class Fase extends JPanel implements ActionListener{
 		timer.start();
 		
 		inicializaInimigos();
+		emJogo = true;
 		
 		
 	}//constructor
@@ -57,26 +60,33 @@ public class Fase extends JPanel implements ActionListener{
 	
 	public void paint(Graphics g) {
 		Graphics2D graficos = (Graphics2D) g;
-		graficos.drawImage(fundo, 0, 0, null);
-		graficos.drawImage(nebulosa, 0, 0, null);
-		
-		
-		List <Tiro> tiros = player.getTiros();
-		for(int i = 0; i < tiros.size();i++) {
-			Tiro m = tiros.get(i);
-			m.load();
-			graficos.drawImage(m.getImagem(), m.getX(), m.getY(), this);
-		}//for
-		
-		graficos.drawImage(player.getImagem(), player.getX(), player.getY(), this); ///inverti aqui com o original, para  a nave ficar aciam do tro, visualmente fica mais bonito
-		
-		for (int o = 0; o < inimigo1.size(); o++) {
-			Inimigo1 in = inimigo1.get(o);
-			in.load();
-			graficos.drawImage(in.getImagem(), in.getX(),in.getY(), this);
-		}//for
+		if(emJogo==true) {
+			graficos.drawImage(fundo, 0, 0, null);
+			graficos.drawImage(nebulosa, 0, 0, null);
+			
+			
+			List <Tiro> tiros = player.getTiros();
+			for(int i = 0; i < tiros.size();i++) {
+				Tiro m = tiros.get(i);
+				m.load();
+				graficos.drawImage(m.getImagem(), m.getX(), m.getY(), this);
+			}//for
+			
+			graficos.drawImage(player.getImagem(), player.getX(), player.getY(), this); ///inverti aqui com o original, para  a nave ficar aciam do tro, visualmente fica mais bonito
+			
+			for (int o = 0; o < inimigo1.size(); o++) {
+				Inimigo1 in = inimigo1.get(o);
+				in.load();
+				graficos.drawImage(in.getImagem(), in.getX(),in.getY(), this);
+			}//for
+		}//if
+		else {
+			ImageIcon fimJogo = new ImageIcon("res\\fimdejogo.png");
+			graficos.drawImage(fimJogo.getImage(), 0,0,1024,728, null);
+		}//else
 		
 		g.dispose();
+		
 	}// paint
 
 	@Override
@@ -105,9 +115,43 @@ public class Fase extends JPanel implements ActionListener{
 				
 			}//for
 			
+			checarColisoes();
+			
 			repaint();
 		
 	}//actionPerformed
+	
+	public void checarColisoes() {
+		Rectangle formaNave = player.getBounds();
+		Rectangle formaInimigo1;
+		Rectangle formaTiro ;
+		
+		for (int i = 0; i < inimigo1.size(); i++) {
+			Inimigo1 tempInimigo1 = inimigo1.get(i);
+			formaInimigo1 = tempInimigo1.getBounds();
+			if(formaNave.intersects(formaInimigo1)) {
+				player.setVisivel(false);
+				tempInimigo1.setVisivel(false);
+				emJogo = false;
+			}//if
+		}//for
+		
+		List<Tiro> tiros = player.getTiros();
+		
+		for (int j = 0; j < tiros.size(); j++) {
+			Tiro tempTiro = tiros.get(j);
+			formaTiro = tempTiro.getBounds();
+			for (int k = 0; k < inimigo1.size(); k++) {
+				Inimigo1 tempInimigo1 = inimigo1.get(k);
+				formaInimigo1 = tempInimigo1.getBounds();
+				if(formaTiro.intersects(formaInimigo1)) {
+					tempInimigo1.setVisivel(false);
+					tempTiro.setVisivel(false);
+				}//if
+			}//for
+		}//for
+		
+	}//checarColisoes
 	
 	private class TecladoAdapter extends KeyAdapter {
 		@Override

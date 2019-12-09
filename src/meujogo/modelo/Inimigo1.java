@@ -1,6 +1,7 @@
 package meujogo.modelo;
 
 import java.awt.Image;
+import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
@@ -35,6 +36,9 @@ public class Inimigo1 {
 		//}//if
 	}//update
 	
+	public Rectangle getBounds() {
+		return new Rectangle(x, y, largura, altura);
+	}
 
 	public boolean isVisivel() {
 		return isVisivel;
