@@ -21,6 +21,7 @@ public class Fase extends JPanel implements ActionListener{
 	private Player player;
 	private  Timer timer;
 	private List<Inimigo1> inimigo1;
+	private List<Nebula> nebulas;
 	private boolean emJogo;
 	
 	public Fase() {
@@ -41,6 +42,7 @@ public class Fase extends JPanel implements ActionListener{
 		timer.start();
 		
 		inicializaInimigos();
+		inicializaNebulas();
 		emJogo = true;
 		
 		
@@ -58,11 +60,31 @@ public class Fase extends JPanel implements ActionListener{
 		
 	}//inicializaInimigos
 	
+	
+	public void inicializaNebulas() {
+		int coordenadas [] = new int [3];
+		nebulas = new ArrayList<Nebula>();
+		
+		for (int i = 0; i < coordenadas.length; i++) {
+			int x  = (int)(Math.random() * 1050+1024);
+			int y =  (int)((Math.random() * 768)  - (Math.random() * 768));
+			nebulas.add(new Nebula(x,y));
+		}//for
+	}//inicializaNebulas
+	
 	public void paint(Graphics g) {
 		Graphics2D graficos = (Graphics2D) g;
 		if(emJogo==true) {
 			graficos.drawImage(fundo, 0, 0, null);
-			graficos.drawImage(nebulosa, 0, 0, null);
+			//graficos.drawImage(nebulosa, 0, 0, null);
+			
+			for(int j = 0; j < nebulas.size();j++) {
+				Nebula n = nebulas.get(j);
+				n.load();
+				graficos.drawImage(n.getImagem(), n.getX(), n.getY(), this);
+			}//for
+			
+			
 			
 			
 			List <Tiro> tiros = player.getTiros();
@@ -92,6 +114,16 @@ public class Fase extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 			player.update();
+			
+			for (int p = 0; p < nebulas.size(); p++) {
+				Nebula on = nebulas.get(p);
+				if(on.isVisivel()) {
+					on.update();
+				}//if
+				else {
+					nebulas.remove(p);
+				}//else
+			}//for
 			
 			List <Tiro> tiros = player.getTiros();
 			for(int i = 0; i < tiros.size();i++) {
