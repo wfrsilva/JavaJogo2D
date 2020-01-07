@@ -103,7 +103,7 @@ public class Fase extends JPanel implements ActionListener{
 			}//for
 		}//if
 		else {
-			ImageIcon fimJogo = new ImageIcon("res\\fimdejogo.png");
+			ImageIcon fimJogo = new ImageIcon("..\\res\\fimdejogo.png");
 			graficos.drawImage(fimJogo.getImage(), 0,0,1024,728, null);
 		}//else
 		

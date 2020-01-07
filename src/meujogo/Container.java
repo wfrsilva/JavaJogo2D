@@ -13,7 +13,7 @@ public class Container extends JFrame{
 	public Container (){
 		add(new Fase());
     	setTitle("Meu jogo de Espaconave");
-    	ImageIcon icone = new ImageIcon("res//icon_spaceship.png");
+    	ImageIcon icone = new ImageIcon("res\\icon_spaceship.png");
         this.setIconImage(icone.getImage());
 
 		setSize(1024,728);
